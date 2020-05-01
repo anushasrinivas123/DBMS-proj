@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Register form</title>
+        {% load static %}
+        <link ref="{% static 'css/bootstrap.min.css' %}" href="{% static 'csss/adminstyle.css' %}" rel="stylesheet">
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    </head>
+    
+    <body>
+       
+           
+           <form action="{% url 'register' %}" method="POST" class="box">
+             <h1>Sign Up</h1>
+             {% csrf_token %}
+
+            {{ form.as_p }}
+              
+              <button type="submit" class="btn btn-primary">Submit</button>
+             
+           </form>
+    </body>
+
+</html>
